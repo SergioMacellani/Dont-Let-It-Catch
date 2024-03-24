@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639e7891589f41f48b97437ddb4718ec, type: 3}
+  m_Name: NetworkPrefabRegistry
+  m_EditorClassIdentifier: 
+  prefabs:
+    _serializedList:
+    - Key:
+        high: -168434152
+        low: -1246215703
+      Value: {fileID: 6412750695271177749, guid: f2d4c4c2295fd8e4a8a7353bb945409d,
+        type: 3}
+    - Key:
+        high: -1028344690
+        low: 134198622
+      Value: {fileID: 1929699772166020255, guid: d5b814a6fa3394343ad9cebae03c2a82,
+        type: 3}
+    - Key:
+        high: 210625468
+        low: -430893208
+      Value: {fileID: 543163999754929637, guid: e2e179e9c065fc24f91651d949f18c48,
+        type: 3}
