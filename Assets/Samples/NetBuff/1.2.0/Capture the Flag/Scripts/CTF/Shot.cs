@@ -34,6 +34,11 @@ namespace CTF
         {
             other.rigidbody?.AddExplosionForce(100, other.contacts[0].point, 10);
             other.rigidbody?.AddForceAtPosition(transform.forward * 15, other.contacts[0].point);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                var player = other.gameObject.GetComponent<CTFPlayer>();
+                if (player.isBlue.Value != CTFManager.instance.GetServerListSide(OwnerId)) player.life.Value--;
+            }
             Despawn();
         }
         

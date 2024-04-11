@@ -38,6 +38,8 @@ public class CTFManager : NetworkBehaviour
     public TextMeshProUGUI orangeMessageText, blueMessageText;
     public Transform serverListSideBlue, serverListSideOrange;
     public Button startButton;
+    
+    public GameObject[] lifePoints;
 
     private void Awake()
     {

@@ -1,4 +1,6 @@
 using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -24,6 +26,7 @@ public class CTFPlayer : NetworkBehaviour
     public GameObject pirateHat;
     private Rigidbody _rb;
     private Camera _camera;
+    public GameObject[] lifePoints;
     
     [Header("FLAG")]
     public GameObject flag;
@@ -40,6 +43,7 @@ public class CTFPlayer : NetworkBehaviour
     public BoolNetworkValue isBlue = new(false);
     public BoolNetworkValue carryingFlag = new(false, NetworkValue.ModifierType.Server);
     public ColorNetworkValue color = new(Color.white);
+    public IntNetworkValue life = new(3, NetworkValue.ModifierType.Everybody);
     
     private float cameraRot = 0;
     private float _colorHUE = 0;
@@ -51,14 +55,30 @@ public class CTFPlayer : NetworkBehaviour
         TryGetComponent(out _rb);
         flag.transform.GetChild(0).TryGetComponent(out flagRenderer);
         _camera = Camera.main;
+        lifePoints = CTFManager.instance.lifePoints;
+        life.Value = lifePoints.Length;
         
         //Values
-        WithValues(isBlue, carryingFlag, nick, gameStarted, color);
+        WithValues(isBlue, carryingFlag, nick, gameStarted, color, life);
         nick.OnValueChanged += OnChangeNick;
         isBlue.OnValueChanged += OnChangeTeam;
         carryingFlag.OnValueChanged += OnChangeCarryingFlag;
         gameStarted.OnValueChanged += GameStart;
         color.OnValueChanged += OnChangeColor;
+        life.OnValueChanged += OnChangeLife;
+    }
+
+    private void OnChangeLife(int oldvalue, int newvalue)
+    {
+        for (var i = 0; i < lifePoints.Length; i++)
+        {
+            lifePoints[i].SetActive(i < newvalue);
+        }
+        if (newvalue <= 0)
+        {
+            life.Value = lifePoints.Length;
+            transform.position = CTFManager.instance.GetSpawn(isBlue.Value);
+        }
     }
 
     private void OnChangeColor(Color oldvalue, Color newvalue)

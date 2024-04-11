@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 1116940858464985164}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,6 +775,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 1929699772166020255, guid: d5b814a6fa3394343ad9cebae03c2a82,
     type: 3}
   pirateHat: {fileID: 1113644198466839657}
+  lifePoints: []
   flag: {fileID: 2750719177604499486}
   walkSpeed: 5
   jumpForce: 3
@@ -794,6 +795,9 @@ MonoBehaviour:
   color:
     _value: {r: 1, g: 1, b: 1, a: 1}
     _type: 2
+  life:
+    _value: 3
+    _type: 0
   shotTimeout: 1
 --- !u!1 &7479462537260332286
 GameObject:

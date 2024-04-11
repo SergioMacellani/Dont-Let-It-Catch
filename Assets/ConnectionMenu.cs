@@ -12,12 +12,14 @@ public class ConnectionMenu : MonoBehaviour
 {
     public TMPro.TMP_InputField nickInput;
     public TMPro.TMP_InputField ipInput;
+    public TMPro.TMP_InputField portInput;
     public TMPro.TMP_InputField serverList;
     public Button hostButton;
     public Button joinButton;
     public Button refreshButton;
 
     public GameObject connectMenu;
+    public GameObject serverMenu;
     
     private ServerDiscoverer.GameInfo[] _serverList;
 
@@ -32,7 +34,7 @@ public class ConnectionMenu : MonoBehaviour
             {
                 udp.Name = nickInput.text;
                 udp.address = ipInput.text;
-                udp.Ip = ipInput.text;
+                udp.port = ushort.Parse(portInput.text);
             }
             
             NetworkManager.Instance.StartHost();
@@ -46,6 +48,7 @@ public class ConnectionMenu : MonoBehaviour
             if (NetworkManager.Instance.transport is UDPNetworkTransport udp)
             {
                 udp.address = ipInput.text;
+                udp.port = ushort.Parse(portInput.text);
             }
             NetworkManager.Instance.StartClient();
         });
@@ -53,6 +56,7 @@ public class ConnectionMenu : MonoBehaviour
         if (NetworkManager.Instance.transport is UDPNetworkTransport udp)
         {
             ipInput.text = udp.address;
+            portInput.text = udp.port.ToString();
         }
 
         nickInput.text = PlayerPrefs.GetString("Nick", "");
@@ -87,6 +91,7 @@ public class ConnectionMenu : MonoBehaviour
         {
             DrawServerList();
             connectMenu.SetActive(true);
+            serverMenu.SetActive(false);
             connectMenu.transform.parent.gameObject.SetActive(true);
         }
     }
