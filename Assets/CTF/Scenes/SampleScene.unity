@@ -2718,7 +2718,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -830}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &509212515
 MonoBehaviour:
@@ -7045,8 +7045,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Creditos:\n\nLucas Quinino Figueiredo\nRenzo Santos Diniz\nS\xE9rgio Oliveira
-    Macellani"
+  m_text: "Creditos:\n\nLucas Quinino Figueiredo\nLuiz Felipe Bozzi\nRenzo Santos
+    Diniz\nS\xE9rgio Oliveira Macellani"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a25366c21f84ba4fbbbadecc6090376, type: 2}
   m_sharedMaterial: {fileID: -487599149335898270, guid: 2a25366c21f84ba4fbbbadecc6090376,
@@ -8262,7 +8262,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -830}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1728392261
 MonoBehaviour:
@@ -8328,7 +8328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1757069817
 RectTransform:
   m_ObjectHideFlags: 0
